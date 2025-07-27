@@ -1,0 +1,22 @@
+# Web scraping and API integration
+requests>=2.31.0
+firecrawl-py>=0.0.8
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# AI and ML libraries
+openai>=1.0.0
+google-generativeai>=0.3.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Vector database integration
+pinecone[grpc]>=3.0.0
+
+# Utility libraries
+pydantic>=2.0.0
+asyncio>=3.4.3
+aiohttp>=3.8.0
