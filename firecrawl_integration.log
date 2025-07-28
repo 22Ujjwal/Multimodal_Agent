@@ -1,0 +1,161 @@
+2025-07-27 14:17:32,950 - INFO - 🚀 Starting comprehensive test suite...
+2025-07-27 14:17:32,951 - INFO - 
+==================================================
+2025-07-27 14:17:32,951 - INFO - Running: Single URL Scrape
+2025-07-27 14:17:32,951 - INFO - ==================================================
+2025-07-27 14:17:32,951 - ERROR - Test 'Single URL Scrape' failed with exception: Missing required API keys: FIRECRAWL_API_KEY, GEMINI_API_KEY, PINECONE_API_KEY
+2025-07-27 14:17:32,951 - INFO - 
+==================================================
+2025-07-27 14:17:32,951 - INFO - Running: Embedding Generation
+2025-07-27 14:17:32,951 - INFO - ==================================================
+2025-07-27 14:17:32,951 - ERROR - Test 'Embedding Generation' failed with exception: Missing required API keys: FIRECRAWL_API_KEY, GEMINI_API_KEY, PINECONE_API_KEY
+2025-07-27 14:17:32,951 - INFO - 
+==================================================
+2025-07-27 14:17:32,951 - INFO - Running: Pinecone Connection
+2025-07-27 14:17:32,951 - INFO - ==================================================
+2025-07-27 14:17:32,951 - ERROR - Test 'Pinecone Connection' failed with exception: Missing required API keys: FIRECRAWL_API_KEY, GEMINI_API_KEY, PINECONE_API_KEY
+2025-07-27 14:17:32,952 - INFO - 
+==================================================
+2025-07-27 14:17:32,952 - INFO - TEST SUMMARY
+2025-07-27 14:17:32,952 - INFO - ==================================================
+2025-07-27 14:17:32,952 - INFO - ❌ FAIL - Single URL Scrape
+2025-07-27 14:17:32,952 - INFO - ❌ FAIL - Embedding Generation
+2025-07-27 14:17:32,952 - INFO - ❌ FAIL - Pinecone Connection
+2025-07-27 14:17:32,952 - INFO - 
+Overall: 0/3 tests passed
+2025-07-27 14:17:32,952 - ERROR - 
+❌ 3 tests failed. Please check configuration.
+2025-07-27 14:33:58,298 - INFO - 🧪 Testing knowledge base with fallback data...
+2025-07-27 14:33:58,299 - INFO - All API keys validated successfully
+2025-07-27 14:33:58,299 - INFO - AVENWebScraper initialized successfully
+2025-07-27 14:33:58,299 - INFO - Testing embedding generation...
+2025-07-27 14:33:58,778 - INFO - ✅ Embedding generation works - dimension: 768
+2025-07-27 14:33:58,778 - INFO - Testing Pinecone connection...
+2025-07-27 14:33:59,615 - INFO - Connected to Pinecone index: aven-v1
+2025-07-27 14:33:59,615 - INFO - ✅ Pinecone connection successful
+2025-07-27 14:33:59,615 - INFO - Processing and storing fallback data...
+2025-07-27 14:33:59,723 - INFO - Connected to Pinecone index: aven-v1
+2025-07-27 14:33:59,723 - INFO - Created 1 chunks for https://www.aven.com/
+2025-07-27 14:33:59,939 - INFO - Created 2 chunks for https://www.aven.com/education
+2025-07-27 14:34:00,410 - INFO - Created 2 chunks for https://www.aven.com/support
+2025-07-27 14:34:00,871 - INFO - Created 2 chunks for https://www.aven.com/about
+2025-07-27 14:34:01,947 - ERROR - Error upserting batch: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 27 Jul 2025 19:34:01 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '135', 'x-pinecone-request-id': '1969052393355492805', 'x-envoy-upstream-service-time': '40', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Vector dimension 768 does not match the dimension of the index 1024","details":[]}
+
+2025-07-27 14:34:01,948 - INFO - Successfully stored 7 vectors in Pinecone
+2025-07-27 14:34:01,948 - INFO - ✅ Fallback data processed and stored
+2025-07-27 14:34:01,948 - INFO - Testing knowledge base queries...
+2025-07-27 14:34:02,248 - ERROR - Error querying knowledge base: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 27 Jul 2025 19:34:02 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '30', 'x-pinecone-request-id': '774147004054096693', 'x-envoy-upstream-service-time': '31', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Vector dimension 768 does not match the dimension of the index 1024","details":[]}
+
+2025-07-27 14:34:02,249 - WARNING - ⚠️ Query 'What is AVEN?': No results found
+2025-07-27 14:34:02,555 - ERROR - Error querying knowledge base: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 27 Jul 2025 19:34:02 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '36', 'x-pinecone-request-id': '6759974286266157434', 'x-envoy-upstream-service-time': '36', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Vector dimension 768 does not match the dimension of the index 1024","details":[]}
+
+2025-07-27 14:34:02,556 - WARNING - ⚠️ Query 'How do HELOC loans work?': No results found
+2025-07-27 14:34:02,819 - ERROR - Error querying knowledge base: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 27 Jul 2025 19:34:02 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '0', 'x-pinecone-request-id': '267106558356363519', 'x-envoy-upstream-service-time': '1', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Vector dimension 768 does not match the dimension of the index 1024","details":[]}
+
+2025-07-27 14:34:02,819 - WARNING - ⚠️ Query 'What are the interest rates?': No results found
+2025-07-27 14:34:03,110 - ERROR - Error querying knowledge base: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 27 Jul 2025 19:34:03 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '3', 'x-pinecone-request-id': '2815617063839129151', 'x-envoy-upstream-service-time': '0', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Vector dimension 768 does not match the dimension of the index 1024","details":[]}
+
+2025-07-27 14:34:03,110 - WARNING - ⚠️ Query 'How can I contact support?': No results found
+2025-07-27 14:34:03,403 - ERROR - Error querying knowledge base: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 27 Jul 2025 19:34:03 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '0', 'x-pinecone-request-id': '1380324484032278184', 'x-envoy-upstream-service-time': '0', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Vector dimension 768 does not match the dimension of the index 1024","details":[]}
+
+2025-07-27 14:34:03,403 - WARNING - ⚠️ Query 'What services does AVEN offer?': No results found
+2025-07-27 14:34:03,404 - INFO - 🎉 All tests passed! Knowledge base is working.
+2025-07-27 14:42:52,775 - INFO - 🧪 Testing knowledge base with fallback data...
+2025-07-27 14:42:52,776 - INFO - All API keys validated successfully
+2025-07-27 14:42:52,776 - INFO - AVENWebScraper initialized successfully
+2025-07-27 14:42:52,776 - INFO - Testing embedding generation...
+2025-07-27 14:42:53,223 - INFO - ✅ Embedding generation works - dimension: 768
+2025-07-27 14:42:53,223 - INFO - Testing Pinecone connection...
+2025-07-27 14:42:53,578 - INFO - Connected to Pinecone index: aven-v2
+2025-07-27 14:42:53,578 - INFO - ✅ Pinecone connection successful
+2025-07-27 14:42:53,578 - INFO - Processing and storing fallback data...
+2025-07-27 14:42:53,695 - INFO - Connected to Pinecone index: aven-v2
+2025-07-27 14:42:53,696 - INFO - Created 1 chunks for https://www.aven.com/
+2025-07-27 14:42:53,932 - INFO - Created 2 chunks for https://www.aven.com/education
+2025-07-27 14:42:54,422 - INFO - Created 2 chunks for https://www.aven.com/support
+2025-07-27 14:42:54,891 - INFO - Created 2 chunks for https://www.aven.com/about
+2025-07-27 14:42:55,851 - INFO - Upserted batch 1/1
+2025-07-27 14:42:55,851 - INFO - Successfully stored 7 vectors in Pinecone
+2025-07-27 14:42:55,851 - INFO - ✅ Fallback data processed and stored
+2025-07-27 14:42:55,851 - INFO - Testing knowledge base queries...
+2025-07-27 14:42:56,171 - WARNING - ⚠️ Query 'What is AVEN?': No results found
+2025-07-27 14:42:56,450 - WARNING - ⚠️ Query 'How do HELOC loans work?': No results found
+2025-07-27 14:42:56,712 - WARNING - ⚠️ Query 'What are the interest rates?': No results found
+2025-07-27 14:42:57,003 - WARNING - ⚠️ Query 'How can I contact support?': No results found
+2025-07-27 14:42:57,383 - WARNING - ⚠️ Query 'What services does AVEN offer?': No results found
+2025-07-27 14:42:57,383 - INFO - 🎉 All tests passed! Knowledge base is working.
+2025-07-27 14:43:48,323 - INFO - All API keys validated successfully
+2025-07-27 14:43:48,323 - INFO - AVENWebScraper initialized successfully
+2025-07-27 14:43:48,674 - INFO - Connected to Pinecone index: aven-v2
+2025-07-27 14:44:23,151 - INFO - 🚀 Starting AVEN Knowledge Base Setup
+2025-07-27 14:44:23,151 - INFO - ============================================================
+2025-07-27 14:44:23,151 - INFO - Initializing AVEN Web Scraper...
+2025-07-27 14:44:23,151 - INFO - All API keys validated successfully
+2025-07-27 14:44:23,151 - INFO - AVENWebScraper initialized successfully
+2025-07-27 14:44:23,151 - INFO - Checking environment variables...
+2025-07-27 14:44:23,151 - INFO - ✅ All environment variables present
+2025-07-27 14:44:23,151 - INFO - Setting up Pinecone index...
+2025-07-27 14:44:23,547 - INFO - Connected to Pinecone index: aven-v2
+2025-07-27 14:44:23,547 - INFO - ✅ Pinecone index ready
+2025-07-27 14:44:23,547 - INFO - Starting web scraping and indexing pipeline...
+2025-07-27 14:44:23,547 - INFO - Starting full pipeline...
+2025-07-27 14:44:23,547 - INFO - Step 1: Scraping websites...
+2025-07-27 14:44:23,547 - INFO - Scraping URL: https://www.aven.com/
+2025-07-27 14:44:25,231 - ERROR - Error scraping https://www.aven.com/: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:25,232 - INFO - Using fallback data for https://www.aven.com/
+2025-07-27 14:44:27,235 - INFO - Scraping URL: https://www.aven.com/education
+2025-07-27 14:44:28,847 - ERROR - Error scraping https://www.aven.com/education: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:28,848 - INFO - Using fallback data for https://www.aven.com/education
+2025-07-27 14:44:30,849 - INFO - Scraping URL: https://www.aven.com/reviews
+2025-07-27 14:44:32,467 - ERROR - Error scraping https://www.aven.com/reviews: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:34,470 - INFO - Scraping URL: https://www.aven.com/support
+2025-07-27 14:44:36,106 - ERROR - Error scraping https://www.aven.com/support: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:36,107 - INFO - Using fallback data for https://www.aven.com/support
+2025-07-27 14:44:38,109 - INFO - Scraping URL: https://www.aven.com/app
+2025-07-27 14:44:39,735 - ERROR - Error scraping https://www.aven.com/app: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:41,737 - INFO - Scraping URL: https://www.aven.com/about
+2025-07-27 14:44:43,343 - ERROR - Error scraping https://www.aven.com/about: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:43,344 - INFO - Using fallback data for https://www.aven.com/about
+2025-07-27 14:44:45,351 - INFO - Scraping URL: https://www.aven.com/contact
+2025-07-27 14:44:46,953 - ERROR - Error scraping https://www.aven.com/contact: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]
+2025-07-27 14:44:48,955 - INFO - Successfully scraped 4 out of 7 URLs
+2025-07-27 14:44:48,955 - INFO - Step 2: Processing and storing data...
+2025-07-27 14:44:49,110 - INFO - Connected to Pinecone index: aven-v2
+2025-07-27 14:44:49,111 - INFO - Created 1 chunks for https://www.aven.com/
+2025-07-27 14:44:49,675 - INFO - Created 2 chunks for https://www.aven.com/education
+2025-07-27 14:44:50,112 - INFO - Created 2 chunks for https://www.aven.com/support
+2025-07-27 14:44:50,602 - INFO - Created 2 chunks for https://www.aven.com/about
+2025-07-27 14:44:51,985 - INFO - Upserted batch 1/1
+2025-07-27 14:44:51,986 - INFO - Successfully stored 7 vectors in Pinecone
+2025-07-27 14:44:51,986 - INFO - Step 3: Testing the system...
+2025-07-27 14:44:52,287 - INFO - Query: 'What is AVEN?' - Found 5 results
+2025-07-27 14:44:52,288 - INFO - Top result: About AVEN (score: 0.742)
+2025-07-27 14:44:52,559 - INFO - Query: 'How do HELOC loans work?' - Found 5 results
+2025-07-27 14:44:52,560 - INFO - Top result: AVEN Education - Financial Learning Center (score: 0.767)
+2025-07-27 14:44:52,820 - INFO - Query: 'What are the interest rates?' - Found 5 results
+2025-07-27 14:44:52,820 - INFO - Top result: AVEN Education - Financial Learning Center (score: 0.725)
+2025-07-27 14:44:53,087 - INFO - Query: 'How do I apply for a credit card?' - Found 5 results
+2025-07-27 14:44:53,087 - INFO - Top result: AVEN Customer Support (score: 0.774)
+2025-07-27 14:44:53,349 - INFO - Query: 'What customer support is available?' - Found 5 results
+2025-07-27 14:44:53,349 - INFO - Top result: AVEN Customer Support (score: 0.763)
+2025-07-27 14:44:53,349 - INFO - Pipeline completed successfully!
+2025-07-27 14:44:53,350 - INFO - 🎉 Setup completed successfully!
+2025-07-27 14:44:53,350 - INFO - The knowledge base is now ready to use.
