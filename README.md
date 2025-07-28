@@ -1,7 +1,9 @@
-# HELOC AI Agent Web App
+# HELOC Agent Web App
 
 A sophisticated web application featuring voice and text chatbot integration with Vapi for a HELOC company offering credit cards. Built with Next.js, React, and modern UI components.
 
+![Webapp](Webapp.png)
+![Workflow](Aven-chatbot.png)
 ![Workflow](Workflow.png)
 
 ## Features
