@@ -2,6 +2,8 @@
 
 A sophisticated web application featuring voice and text chatbot integration with Vapi for a HELOC company offering credit cards. Built with Next.js, React, and modern UI components.
 
+![Workflow](Workflow.png)
+
 ## Features
 
 - **Modern UI Design**: Inspired by Wellfound.com with glass-morphism effects
